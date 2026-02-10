@@ -290,28 +290,71 @@ input:focus, textarea:focus, select:focus {
 
 
 /* ============================================================
-   BADGES (Priority/State)
+   BADGES — Priority & State
 ============================================================ */
+
 .badge {
+    display: inline-block;
     padding: 4px 10px;
-    border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
-    color: white;
+    border-radius: 6px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
-.priority-P1 { background: #ff375f; }
-.priority-P2 { background: #ff9f0a; }
-.priority-P3 { background: #0a84ff; }
-.priority-P4 { background: #30d158; }
+/* -------------------------
+   PRIORITY BADGES
+-------------------------- */
+.priority-P1 {
+    background: #ff375f;
+    box-shadow: 0 0 8px rgba(255, 55, 95, 0.6);
+}
 
-.state-new         { background: #5e5ce6; }
-.state-in-progress { background: #0a84ff; }
-.state-on-hold     { background: #ffd60a; color: #222; }
-.state-resolved    { background: #30d158; }
-.state-closed      { background: #636366; }
+.priority-P2 {
+    background: #ff9f0a;
+    box-shadow: 0 0 8px rgba(255, 159, 10, 0.6);
+}
 
+.priority-P3 {
+    background: #0a84ff;
+    box-shadow: 0 0 8px rgba(10, 132, 255, 0.6);
+}
 
+.priority-P4 {
+    background: #30d158;
+    box-shadow: 0 0 8px rgba(48, 209, 88, 0.6);
+}
+
+/* -------------------------
+   STATE BADGES
+-------------------------- */
+.state-new {
+    background: #5e5ce6;
+    box-shadow: 0 0 8px rgba(94, 92, 230, 0.6);
+}
+
+.state-in-progress {
+    background: #0a84ff;
+    box-shadow: 0 0 8px rgba(10, 132, 255, 0.6);
+}
+
+.state-on-hold {
+    background: #ffd60a;
+    color: #222;
+    box-shadow: 0 0 8px rgba(255, 214, 10, 0.6);
+}
+
+.state-resolved {
+    background: #30d158;
+    box-shadow: 0 0 8px rgba(48, 209, 88, 0.6);
+}
+
+.state-closed {
+    background: #636366;
+    box-shadow: 0 0 8px rgba(99, 99, 102, 0.6);
+}
 
 /* ============================================================
    MODALS
@@ -336,3 +379,4 @@ input:focus, textarea:focus, select:focus {
     border-radius: 16px;
     padding: 25px;
 }
+
