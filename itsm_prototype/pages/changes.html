@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithOps – Change Management</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script defer src="assets/js/theme.js"></script>
+    <script defer src="assets/js/changes.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">ZenithOps</h1>
+            <p class="tagline">A Genpact ITSM Platform</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="index.html" class="menu-btn"><span>🏠</span> Dashboard</a>
+            <a href="incidents.html" class="menu-btn"><span>🟧</span> Incidents</a>
+            <a href="problems.html" class="menu-btn"><span>🟦</span> Problems</a>
+            <a href="changes.html" class="menu-btn"><span>🟩</span> Changes</a>
+            <a href="tasks.html" class="menu-btn"><span>🧩</span> Tasks</a>
+            <a href="ecim-center.html" class="menu-btn"><span>🚨</span> ECIM Center</a>
+            <a href="admin.html" class="menu-btn"><span>⚙️</span> Admin</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <input type="text" class="search-box" placeholder="Search...">
+            <div class="topbar-right">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <div class="profile-name">Hello, Debashish</div>
+            </div>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <h2>Change Management</h2>
+            <a href="change-details.html" class="btn-primary">+ New Change</a>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>CHG ID</th>
+                        <th>Short Description</th>
+                        <th>Type</th>
+                        <th>Priority</th>
+                        <th>State</th>
+                        <th>Requested By</th>
+                        <th>Planned Start</th>
+                    </tr>
+                </thead>
+                <tbody id="changeTableBody"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

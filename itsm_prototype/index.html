@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithOps – Dashboard</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+
+    <script defer src="assets/js/theme.js"></script>
+    <script defer src="assets/js/dashboard.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">ZenithOps</h1>
+            <p class="tagline">A Genpact ITSM Platform</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="index.html" class="menu-btn active">🏠 Dashboard</a>
+            <a href="incidents.html" class="menu-btn">🟧 Incidents</a>
+            <a href="problems.html" class="menu-btn">🟦 Problems</a>
+            <a href="changes.html" class="menu-btn">🟩 Changes</a>
+            <a href="tasks.html" class="menu-btn">🧩 Tasks</a>
+            <a href="ecim-center.html" class="menu-btn">🚨 ECIM Center</a>
+            <a href="admin.html" class="menu-btn">⚙️ Admin</a>
+        </nav>
+    </aside>
+
+
+    <!-- ⭐ FIXED TOPBAR (OUTSIDE MAIN) -->
+    <header class="topbar">
+        <input type="text" class="search-box" placeholder="Search...">
+        <div class="topbar-right">
+            <button id="themeToggle" class="theme-toggle">🌙</button>
+            <div class="profile-name">Hello, Debashish</div>
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <section class="content-area">
+
+            <h2>Dashboard</h2>
+            <button onclick="generateDummyData()" class="btn-primary" style="margin-bottom:20px;">
+                Generate Dummy Data
+            </button>
+
+            <!-- TOP METRICS GRID -->
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+                    <h3>Total Incidents</h3>
+                    <div id="m_total" class="metric-value">0</div>
+                </div>
+
+                <div class="metric-card p1">
+                    <h3>P1 Incidents</h3>
+                    <div id="m_p1" class="metric-value">0</div>
+                </div>
+
+                <div class="metric-card p2">
+                    <h3>P2 Incidents</h3>
+                    <div id="m_p2" class="metric-value">0</div>
+                </div>
+
+                <div class="metric-card open">
+                    <h3>Open Incidents</h3>
+                    <div id="m_open" class="metric-value">0</div>
+                </div>
+
+                <div class="metric-card resolved">
+                    <h3>Resolved Today</h3>
+                    <div id="m_resolved_today" class="metric-value">0</div>
+                </div>
+
+                <div class="metric-card breached">
+                    <h3>SLA Breaches</h3>
+                    <div id="m_breaches" class="metric-value">0</div>
+                </div>
+
+            </div>
+
+            <!-- ANALYTICS TWO-COLUMN GRID -->
+            <div class="analytics-grid">
+
+                <!-- PRIORITY DISTRIBUTION -->
+                <div class="card big">
+                    <h3>Priority Distribution</h3>
+                    <div class="bar-chart" id="priorityChart"></div>
+                </div>
+
+                <!-- STATE DISTRIBUTION -->
+                <div class="card big">
+                    <h3>State Distribution</h3>
+                    <div class="bar-chart" id="stateChart"></div>
+                </div>
+
+            </div>
+
+            <!-- RECENT INCIDENTS -->
+            <div class="card">
+                <h3>Recent Incidents</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Summary</th>
+                            <th>Priority</th>
+                            <th>State</th>
+                            <th>Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentIncTable"></tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

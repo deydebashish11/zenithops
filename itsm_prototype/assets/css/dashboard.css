@@ -1,0 +1,72 @@
+/* ============================================================
+   ZENITHOPS – ENTERPRISE DASHBOARD POLISH
+============================================================ */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.metric-card {
+    padding: 18px;
+    border-radius: 14px;
+    background: var(--card-glass);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.metric-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* Color accents */
+.metric-card.p1 { border-left: 6px solid #ff2b2b; }
+.metric-card.p2 { border-left: 6px solid #ff7b00; }
+.metric-card.open { border-left: 6px solid #0099ff; }
+.metric-card.resolved { border-left: 6px solid #00c853; }
+.metric-card.breached { border-left: 6px solid #ff2b2b; }
+
+/* ANALYTICS GRID */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.card.big {
+    padding: 20px;
+    border-radius: 14px;
+    background: var(--card-glass);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.bar-chart {
+    margin-top: 15px;
+}
+
+.bar {
+    height: 20px;
+    background: var(--accent);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: var(--accent-glow);
+}
+
+.bar-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}

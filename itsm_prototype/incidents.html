@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithOps – Incidents</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script defer src="assets/js/theme.js"></script>
+    <script defer src="assets/js/incidents.js"></script>
+</head>
+<button onclick="generateDummyData()" class="btn-primary" style="margin-bottom:15px;">
+    Generate Dummy Data
+</button>
+
+<script src="assets/js/dummy-data.js"></script>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">ZenithOps</h1>
+            <p class="tagline">A Genpact ITSM Platform</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="index.html" class="menu-btn"><span>🏠</span> Dashboard</a>
+            <a href="incidents.html" class="menu-btn active"><span>🟧</span> Incidents</a>
+            <a href="problems.html" class="menu-btn"><span>🟦</span> Problems</a>
+            <a href="changes.html" class="menu-btn"><span>🟩</span> Changes</a>
+            <a href="tasks.html" class="menu-btn"><span>🧩</span> Tasks</a>
+            <a href="ecim-center.html" class="menu-btn"><span>🚨</span> ECIM Center</a>
+            <a href="admin.html" class="menu-btn"><span>⚙️</span> Admin</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search incidents…">
+            <div class="topbar-right">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <div class="profile-name">Hello, Debashish</div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="content-area">
+
+            <div class="list-header">
+                <h2>Incidents</h2>
+                <a class="btn-primary" href="incident-details.html">+ New Incident</a>
+            </div>
+
+            <!-- FILTER CHIPS -->
+            <div class="filters">
+                <button class="filter-chip" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="P1">P1</button>
+                <button class="filter-chip" data-filter="P2">P2</button>
+                <button class="filter-chip" data-filter="P3">P3</button>
+                <button class="filter-chip" data-filter="New">New</button>
+                <button class="filter-chip" data-filter="In Progress">In Progress</button>
+                <button class="filter-chip" data-filter="Resolved">Resolved</button>
+            </div>
+
+            <!-- TABLE -->
+            <table class="table incident-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Summary</th>
+                        <th>Priority</th>
+                        <th>State</th>
+                        <th>Caller</th>
+                        <th>Opened</th>
+                    </tr>
+                </thead>
+                <tbody id="incidentTableBody"></tbody>
+            </table>
+
+        </section>
+    </main>
+    <!-- INCIDENT MODAL -->
+    <div id="modalOverlay" onclick="closeIncidentModal()">
+        <div id="incidentModal" onclick="event.stopPropagation()"></div>
+    </div>
+
+    <script src="assets/js/modal.js"></script>
+
+</body>
+</html>

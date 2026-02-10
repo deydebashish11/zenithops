@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithOps – Problems</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script defer src="assets/js/theme.js"></script>
+    <script defer src="assets/js/problems.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">ZenithOps</h1>
+            <p class="tagline">A Genpact ITSM Platform</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="index.html" class="menu-btn"><span>🏠</span> Dashboard</a>
+            <a href="incidents.html" class="menu-btn"><span>🟧</span> Incidents</a>
+            <a href="problems.html" class="menu-btn"><span>🟦</span> Problems</a>
+            <a href="changes.html" class="menu-btn"><span>🟩</span> Changes</a>
+            <a href="tasks.html" class="menu-btn"><span>🧩</span> Tasks</a>
+            <a href="ecim-center.html" class="menu-btn"><span>🚨</span> ECIM Center</a>
+            <a href="admin.html" class="menu-btn"><span>⚙️</span> Admin</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main">
+
+        <header class="topbar">
+            <input type="text" class="search-box" placeholder="Search...">
+            <div class="topbar-right">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <div class="profile-name">Hello, Debashish</div>
+            </div>
+        </header>
+
+        <section class="content-area">
+
+            <h2>Problems</h2>
+            <a href="problem-details.html" class="btn-primary">+ New Problem</a>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>PRB ID</th>
+                        <th>Short Description</th>
+                        <th>State</th>
+                        <th>Priority</th>
+                        <th>Root Cause</th>
+                        <th>Opened</th>
+                    </tr>
+                </thead>
+                <tbody id="problemTableBody"></tbody>
+            </table>
+
+        </section>
+    </main>
+
+</body>
+</html>

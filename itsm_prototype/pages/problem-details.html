@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenithOps – Problem Details</title>
+
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script defer src="assets/js/theme.js"></script>
+    <script defer src="assets/js/problem-details.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">ZenithOps</h1>
+            <p class="tagline">A Genpact ITSM Platform</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="index.html" class="menu-btn"><span>🏠</span> Dashboard</a>
+            <a href="incidents.html" class="menu-btn"><span>🟧</span> Incidents</a>
+            <a href="problems.html" class="menu-btn"><span>🟦</span> Problems</a>
+            <a href="changes.html" class="menu-btn"><span>🟩</span> Changes</a>
+            <a href="tasks.html" class="menu-btn"><span>🧩</span> Tasks</a>
+            <a href="ecim-center.html" class="menu-btn"><span>🚨</span> ECIM Center</a>
+            <a href="admin.html" class="menu-btn"><span>⚙️</span> Admin</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <input type="text" class="search-box" placeholder="Search...">
+            <div class="topbar-right">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <div class="profile-name">Hello, Debashish</div>
+            </div>
+        </header>
+
+        <!-- PAGE CONTENT -->
+        <section class="content-area">
+
+            <h2>Problem Details</h2>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="details">Problem Details</button>
+                <button class="tab-btn" data-tab="rootcause">Root Cause Analysis</button>
+                <button class="tab-btn" data-tab="workaround">Workaround</button>
+                <button class="tab-btn" data-tab="assignment">Assignment</button>
+                <button class="tab-btn" data-tab="related">Related Incidents</button>
+                <button class="tab-btn" data-tab="knownerror">Known Error</button>
+                <button class="tab-btn" data-tab="timeline">Timeline</button>
+            </div>
+
+            <!-- TAB PANES -->
+
+            <!-- DETAILS TAB -->
+            <div id="tab-details" class="tab-pane visible">
+                
+                <div class="form-grid">
+
+                    <!-- LEFT -->
+                    <div>
+                        <label>Short Description</label>
+                        <input id="prb_summary" class="input">
+
+                        <label>Description</label>
+                        <textarea id="prb_description" class="input"></textarea>
+
+                        <label>Priority</label>
+                        <select id="prb_priority" class="input">
+                            <option>P1</option>
+                            <option>P2</option>
+                            <option>P3</option>
+                            <option>P4</option>
+                        </select>
+
+                        <label>State</label>
+                        <select id="prb_state" class="input">
+                            <option>Draft</option>
+                            <option>Analysis</option>
+                            <option>Fix in Progress</option>
+                            <option>Resolved</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div>
+                        <label>Problem ID</label>
+                        <input id="prb_id" class="input" disabled>
+
+                        <label>Opened</label>
+                        <input id="prb_opened" class="input" disabled>
+
+                        <label>Last Updated</label>
+                        <input id="prb_updated" class="input" disabled>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ROOT CAUSE TAB -->
+            <div id="tab-rootcause" class="tab-pane">
+                <label>Root Cause Analysis</label>
+                <textarea id="prb_rootcause" class="input" style="height:150px;"></textarea>
+            </div>
+
+            <!-- WORKAROUND TAB -->
+            <div id="tab-workaround" class="tab-pane">
+                <label>Workaround</label>
+                <textarea id="prb_workaround" class="input" style="height:150px;"></textarea>
+            </div>
+
+            <!-- ASSIGNMENT TAB -->
+            <div id="tab-assignment" class="tab-pane">
+                <div class="form-grid">
+                    <div>
+                        <label>Assignment Group</label>
+                        <input id="prb_group" class="input">
+                    </div>
+                    <div>
+                        <label>Assigned To</label>
+                        <input id="prb_assigned_to" class="input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RELATED INCIDENTS TAB -->
+            <div id="tab-related" class="tab-pane">
+                <p>Related incidents will appear here (future module).</p>
+            </div>
+
+            <!-- KNOWN ERROR TAB -->
+            <div id="tab-knownerror" class="tab-pane">
+                <label>
+                    <input type="checkbox" id="prb_known_error">
+                    Mark as Known Error
+                </label>
+            </div>
+
+            <!-- TIMELINE TAB -->
+            <div id="tab-timeline" class="tab-pane">
+                <p><strong>Opened:</strong> <span id="timeline_opened"></span></p>
+                <p><strong>Last Updated:</strong> <span id="timeline_updated"></span></p>
+            </div>
+
+            <br>
+            <button id="saveProblem" class="btn-primary">Save Problem</button>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenithOps Design System – Figma Spec</title>
+
+<link rel="stylesheet" href="assets/css/theme.css">
+<style>
+
+/* ============================================================
+   ZENITHOPS DESIGN SYSTEM SPEC (FIGMA STYLE)
+============================================================ */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0b0e14;
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #0b0e14, #122034);
+}
+
+.header h1 {
+    font-size: 42px;
+    margin: 0;
+    text-shadow: 0 0 22px #0095ff;
+}
+
+.header p {
+    opacity: 0.8;
+    margin-top: 8px;
+}
+
+/* Section Formatting */
+.section {
+    padding: 35px 60px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 12px rgba(0,153,255,0.46);
+}
+
+.card-spec {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(14px);
+}
+
+/* Color Grid */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 20px;
+}
+
+.color-box {
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Typography */
+.type-sample {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Component Display */
+.component-box {
+    margin-bottom: 20px;
+}
+
+.component-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Layout Cards */
+.layout-img {
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Badge Samples */
+.badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Input + Button Demo */
+.input-demo {
+    width: 280px;
+}
+
+.btn-demo {
+    width: 160px;
+}
+
+/* Tabs Demo */
+.tabs-demo {
+    display: flex;
+    gap: 12px;
+}
+
+.tab-demo {
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+}
+
+.tab-demo.active {
+    background: var(--accent);
+}
+
+/* Table Demo */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.spec-table th,
+.spec-table td {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Modal Preview */
+.modal-preview {
+    width: 420px;
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(20, 20, 35, 0.6);
+    border: 1px solid rgba(0, 153, 255, 0.5);
+    box-shadow: 0 0 25px rgba(0,153,255,0.6), inset 0 0 15px rgba(0,153,255,0.3);
+    backdrop-filter: blur(22px);
+    margin: 20px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+   HEADER
+============================================================ -->
+<div class="header">
+    <h1>ZenithOps — Design System Specification</h1>
+    <p>A complete UI/UX specification for leadership & development</p>
+</div>
+
+<!-- ============================================================
+   COLORS
+============================================================ -->
+<div class="section">
+    <h2>Color Palette</h2>
+
+    <div class="color-grid">
+
+        <div class="color-box" style="background:#0baeff;">Accent<br>#0baeff</div>
+        <div class="color-box" style="background:#0095ff;">Accent Strong<br>#0095ff</div>
+        <div class="color-box" style="background:#0e1117;">Base Dark<br>#0e1117</div>
+        <div class="color-box" style="background:#f4f7fb; color:#111;">Text Light<br>#f4f7fb</div>
+        <div class="color-box" style="background:#5e5ce6;">State: New<br>#5e5ce6</div>
+
+        <div class="color-box" style="background:#0a84ff;">In Progress<br>#0a84ff</div>
+        <div class="color-box" style="background:#ffd60a; color:#222;">On Hold<br>#ffd60a</div>
+        <div class="color-box" style="background:#30d158;">Resolved<br>#30d158</div>
+        <div class="color-box" style="background:#636366;">Closed<br>#636366</div>
+        <div class="color-box" style="background:#ff375f;">P1<br>#ff375f</div>
+
+    </div>
+</div>
+
+<!-- ============================================================
+   TYPOGRAPHY
+============================================================ -->
+<div class="section">
+    <h2>Typography</h2>
+
+    <div class="type-sample">
+        <h1>Heading 1 – 42px</h1>
+        <h2>Heading 2 – 28px</h2>
+        <h3>Heading 3 – 22px</h3>
+        <p>Body Text – 16px (Inter Regular)</p>
+        <small>Caption – 13px</small>
+    </div>
+</div>
+
+<!-- ============================================================
+   COMPONENTS
+============================================================ -->
+<div class="section">
+    <h2>Components</h2>
+
+    <!-- Buttons -->
+    <div class="component-box">
+        <h3>Buttons</h3>
+        <div class="component-row">
+            <button class="btn-primary">Primary Button</button>
+            <button class="btn-primary" style="background:#0a84ff;">Secondary</button>
+        </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="component-box">
+        <h3>Inputs</h3>
+        <input class="input input-demo" placeholder="Input field example" />
+    </div>
+
+    <!-- Tabs -->
+    <div class="component-box">
+        <h3>Tabs</h3>
+        <div class="tabs-demo">
+            <div class="tab-demo active">Details</div>
+            <div class="tab-demo">Assignment</div>
+            <div class="tab-demo">Work Notes</div>
+        </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="component-box">
+        <h3>Badges</h3>
+        <div class="component-row">
+            <span class="badge priority-P1">P1</span>
+            <span class="badge priority-P2">P2</span>
+            <span class="badge priority-P3">P3</span>
+            <span class="badge state-new">New</span>
+            <span class="badge state-resolved">Resolved</span>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="component-box">
+        <h3>Table Preview</h3>
+        <table class="spec-table">
+            <thead>
+                <tr><th>ID</th><th>Summary</th><th>Priority</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>INC-00001</td><td>Server down</td><td>P1</td></tr>
+                <tr><td>INC-00002</td><td>VPN Issue</td><td>P2</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- ============================================================
+   INCIDENT FORM LAYOUT
+============================================================ -->
+<div class="section">
+    <h2>Incident Form Layout (Two-Column)</h2>
+
+    <div class="card-spec">
+        <p>Standard ITIL layout with Details, Assignment, Work Notes, Resolution tabs.</p>
+    </div>
+</div>
+
+<!-- ============================================================
+   MODAL PREVIEW
+============================================================ -->
+<div class="section">
+    <h2>Modal Design (Neon Glow)</h2>
+
+    <div class="modal-preview">
+        <div class="modal-title">Sample Incident Modal</div>
+        <p class="modal-row"><strong>ID:</strong> INC-00025</p>
+        <p class="modal-row"><strong>Priority:</strong> <span class="badge priority-P1">P1</span></p>
+        <p class="modal-row"><strong>State:</strong> In Progress</p>
+    </div>
+
+</div>
+
+<!-- ============================================================
+   DASHBOARD GRID
+============================================================ -->
+<div class="section">
+    <h2>Dashboard Grid System</h2>
+
+    <div class="card-spec">
+        <p>The dashboard uses a 6-column metric grid and 2-column analytics grid.</p>
+        <ul>
+            <li>Metric cards: 6 equal columns</li>
+            <li>Analytics cards: 2 equal columns</li>
+            <li>Recent incidents: full width</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
