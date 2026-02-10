@@ -1,205 +1,287 @@
 /* ============================================================
    ZENITHOPS MAIN LAYOUT CSS
-   (Works with theme.css for full enterprise UI)
+   (Layout, Sidebar, Topbar, Grid, Containers)
 ============================================================ */
 
-/* -----------------------------
-   GLOBAL
------------------------------- */
-body {
+/* -------------------------
+   GLOBAL RESET
+-------------------------- */
+* {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg-base);
+    color: var(--text-light);
+    overflow-x: hidden;
     height: 100vh;
-    overflow: hidden;
+    display: flex;
 }
 
-input, select, textarea, button {
-    font-family: inherit;
-}
-
-/* -----------------------------
-   SIDEBAR LAYOUT
------------------------------- */
+/* -------------------------
+   SIDEBAR
+-------------------------- */
 .sidebar {
-    width: 240px;
+    width: 260px;
     height: 100vh;
     position: fixed;
-    top: 0;
     left: 0;
-    padding: 20px;
-    overflow-y: auto;
+    top: 0;
+
+    padding: 25px 20px;
+    background: var(--glass);
+    border-right: 1px solid var(--border-mid);
+    backdrop-filter: blur(14px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 50;
 }
 
 .sidebar-header {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* MENU BUTTONS */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .menu-btn {
-    display: block;
-    padding: 12px 14px;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 16px;
     border-radius: 10px;
-    text-decoration: none;
+    background: transparent;
     color: var(--text-light);
-    background: var(--card-glass);
-    border: 1px solid var(--card-border);
-    transition: 0.25s;
+    text-decoration: none;
+    border: 1px solid var(--border-low);
+
+    transition: 0.25s ease;
 }
 
 .menu-btn:hover {
-    background: rgba(59,166,255,0.25);
-    box-shadow: var(--accent-glow);
+    background: var(--accent);
+    color: white;
     transform: translateX(4px);
 }
 
 .menu-btn.active {
     background: var(--accent);
-    color: white;
+    color: #fff;
+    box-shadow: var(--accent-glow);
 }
 
-/* -----------------------------
+/* -------------------------
    MAIN CONTENT WRAPPER
------------------------------- */
-.main {
-    margin-left: 240px;
+-------------------------- */
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
     height: 100vh;
     overflow-y: auto;
-    padding: 25px;
+
+    padding: 0 30px 40px 30px;
 }
 
-/* -----------------------------
+/* -------------------------
    TOPBAR
------------------------------- */
+-------------------------- */
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-low);
     margin-bottom: 20px;
 }
 
 .search-box {
     width: 260px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+    color: var(--text-light);
 }
 
-/* -----------------------------
-   PAGE CONTENT AREA
------------------------------- */
-.content-area {
-    padding-right: 10px;
-}
-
-.list-header {
+.topbar-right {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    gap: 15px;
 }
 
-/* -----------------------------
+.theme-toggle {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+    cursor: pointer;
+}
+
+/* -------------------------
+   CONTENT AREA
+-------------------------- */
+.content-area {
+    padding-top: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* -------------------------
+   CARDS (Dashboard boxes)
+-------------------------- */
+.metric-card {
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+    padding: 18px;
+    border-radius: 12px;
+    min-width: 180px;
+}
+
+.metric-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* GRID FOR METRICS */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+/* -------------------------
+   ANALYTICS GRID
+-------------------------- */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+    padding: 18px;
+    border-radius: 12px;
+}
+
+/* -------------------------
    TABLES
------------------------------- */
+-------------------------- */
 .table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--card-glass);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--card-border);
+    margin-top: 12px;
 }
 
 .table th {
+    background: rgba(255,255,255,0.12);
+    padding: 10px;
     text-align: left;
-    padding: 12px;
-    background: rgba(255,255,255,0.10);
-    font-size: 14px;
 }
 
 .table td {
-    padding: 12px;
-    font-size: 14px;
-    border-top: 1px solid var(--card-border);
-    cursor: pointer;
+    padding: 10px;
+    border-top: 1px solid var(--border-low);
 }
 
-/* -----------------------------
-   INPUT FIELDS & FORM GRID
------------------------------- */
+.table tr:hover {
+    background: rgba(255,255,255,0.08);
+}
 
-.input {
+/* -------------------------
+   FORMS
+-------------------------- */
+.input,
+select,
+textarea {
     width: 100%;
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+
+    background: var(--glass);
+    border: 1px solid var(--border-mid);
+    border-radius: 10px;
+    color: var(--text-light);
 }
 
-textarea.input {
-    min-height: 80px;
+textarea {
+    height: 100px;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 10px;
-}
-
-/* -----------------------------
+/* -------------------------
    BUTTONS
------------------------------- */
+-------------------------- */
 .btn-primary {
-    padding: 10px 16px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 18px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 14px;
-    text-decoration: none;
+    transition: 0.2s;
 }
 
-/* -----------------------------
-   FILTERS (USED IN INCIDENTS)
------------------------------- */
-.filters {
-    margin-bottom: 15px;
+.btn-primary:hover {
+    box-shadow: var(--accent-glow);
 }
 
-/* -----------------------------
-   TABS (STRUCTURE)
------------------------------- */
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+/* -------------------------
+   RESPONSIVE
+-------------------------- */
+@media (max-width: 1100px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.tab-btn {
-    border: none;
-    cursor: pointer;
+@media (max-width: 800px) {
+    .sidebar {
+        width: 220px;
+    }
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
 }
 
-.tab-pane {
-    display: none;
-    margin-top: 10px;
-}
-
-.tab-pane.visible {
-    display: block;
-}
-
-/* -----------------------------
-   LISTS (WORK NOTES + TIMELINE)
------------------------------- */
-#worknotes_list,
-#timeline_list {
-    padding-left: 0;
-    margin-top: 15px;
-}
-
-/* -----------------------------
-   SCROLL FIX
------------------------------- */
-.main::-webkit-scrollbar {
-    width: 8px;
-}
-.main::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.25);
-    border-radius: 5px;
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
 }
