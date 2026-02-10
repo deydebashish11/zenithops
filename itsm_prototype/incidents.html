@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidents – ZenithOps</title>
 
-    <title>ZenithOps – Incidents</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="itsm_prototype/assets/css/theme.css">
+    <link rel="stylesheet" href="itsm_prototype/assets/css/main.css">
 
-    <link rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <script defer src="assets/js/theme.js"></script>
-    <script defer src="assets/js/incidents.js"></script>
+    <!-- JS -->
+    <script defer src="itsm_prototype/assets/js/theme.js"></script>
+    <script defer src="itsm_prototype/assets/js/incidents.js"></script>
 </head>
-<button onclick="generateDummyData()" class="btn-primary" style="margin-bottom:15px;">
-    Generate Dummy Data
-</button>
-
-<script src="assets/js/dummy-data.js"></script>
 
 <body>
 
@@ -28,70 +24,55 @@
         </div>
 
         <nav class="sidebar-menu">
-            <a href="index.html" class="menu-btn"><span>🏠</span> Dashboard</a>
-            <a href="incidents.html" class="menu-btn active"><span>🟧</span> Incidents</a>
-            <a href="problems.html" class="menu-btn"><span>🟦</span> Problems</a>
-            <a href="changes.html" class="menu-btn"><span>🟩</span> Changes</a>
-            <a href="tasks.html" class="menu-btn"><span>🧩</span> Tasks</a>
-            <a href="ecim-center.html" class="menu-btn"><span>🚨</span> ECIM Center</a>
-            <a href="admin.html" class="menu-btn"><span>⚙️</span> Admin</a>
+            <a href="index.html" class="menu-btn">🏠 Dashboard</a>
+            <a href="incidents.html" class="menu-btn active">🟧 Incidents</a>
+            <a href="itsm_prototype/pages/problems.html" class="menu-btn">🟦 Problems</a>
+            <a href="itsm_prototype/pages/changes.html" class="menu-btn">🟩 Changes</a>
+            <a href="itsm_prototype/pages/tasks.html" class="menu-btn">🧩 Tasks</a>
+            <a href="itsm_prototype/pages/ecim-center.html" class="menu-btn">🚨 ECIM Center</a>
+            <a href="itsm_prototype/pages/admin.html" class="menu-btn">⚙️ Admin</a>
         </nav>
     </aside>
 
     <!-- MAIN -->
-    <main class="main">
+    <main class="main-content">
 
         <!-- TOPBAR -->
         <header class="topbar">
-            <input type="text" id="searchInput" class="search-box" placeholder="Search incidents…">
+            <input type="text" class="search-box" placeholder="Search...">
+
             <div class="topbar-right">
                 <button id="themeToggle" class="theme-toggle">🌙</button>
                 <div class="profile-name">Hello, Debashish</div>
             </div>
         </header>
 
-        <!-- CONTENT -->
         <section class="content-area">
 
-            <div class="list-header">
-                <h2>Incidents</h2>
-                <a class="btn-primary" href="incident-details.html">+ New Incident</a>
-            </div>
+            <h2>Incidents</h2>
 
-            <!-- FILTER CHIPS -->
-            <div class="filters">
-                <button class="filter-chip" data-filter="all">All</button>
-                <button class="filter-chip" data-filter="P1">P1</button>
-                <button class="filter-chip" data-filter="P2">P2</button>
-                <button class="filter-chip" data-filter="P3">P3</button>
-                <button class="filter-chip" data-filter="New">New</button>
-                <button class="filter-chip" data-filter="In Progress">In Progress</button>
-                <button class="filter-chip" data-filter="Resolved">Resolved</button>
-            </div>
+            <button class="btn-primary" onclick="goToNewIncident()" style="margin-bottom:20px;">
+                + New Incident
+            </button>
 
-            <!-- TABLE -->
-            <table class="table incident-table">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Summary</th>
                         <th>Priority</th>
                         <th>State</th>
-                        <th>Caller</th>
                         <th>Opened</th>
                     </tr>
                 </thead>
-                <tbody id="incidentTableBody"></tbody>
+                <tbody id="incidentTableBody">
+                    <!-- Filled by incidents.js -->
+                </tbody>
             </table>
 
         </section>
-    </main>
-    <!-- INCIDENT MODAL -->
-    <div id="modalOverlay" onclick="closeIncidentModal()">
-        <div id="incidentModal" onclick="event.stopPropagation()"></div>
-    </div>
 
-    <script src="assets/js/modal.js"></script>
+    </main>
 
 </body>
 </html>
