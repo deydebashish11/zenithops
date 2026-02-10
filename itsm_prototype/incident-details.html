@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Details – ZenithOps</title>
 
-    <title>ZenithOps – Incident Details</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="itsm_prototype/assets/css/theme.css">
+    <link rel="stylesheet" href="itsm_prototype/assets/css/main.css">
 
-    <link rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <script defer src="assets/js/theme.js"></script>
-    <script defer src="assets/js/incident-details.js"></script>
+    <!-- JS -->
+    <script defer src="itsm_prototype/assets/js/theme.js"></script>
+    <script defer src="itsm_prototype/assets/js/incident-details.js"></script>
 </head>
 
 <body>
@@ -25,48 +26,55 @@
         <nav class="sidebar-menu">
             <a href="index.html" class="menu-btn">🏠 Dashboard</a>
             <a href="incidents.html" class="menu-btn active">🟧 Incidents</a>
-            <a href="problems.html" class="menu-btn">🟦 Problems</a>
-            <a href="changes.html" class="menu-btn">🟩 Changes</a>
-            <a href="tasks.html" class="menu-btn">🧩 Tasks</a>
-            <a href="ecim-center.html" class="menu-btn">🚨 ECIM Center</a>
-            <a href="admin.html" class="menu-btn">⚙️ Admin</a>
+            <a href="itsm_prototype/pages/problems.html" class="menu-btn">🟦 Problems</a>
+            <a href="itsm_prototype/pages/changes.html" class="menu-btn">🟩 Changes</a>
+            <a href="itsm_prototype/pages/tasks.html" class="menu-btn">🧩 Tasks</a>
+            <a href="itsm_prototype/pages/ecim-center.html" class="menu-btn">🚨 ECIM Center</a>
+            <a href="itsm_prototype/pages/admin.html" class="menu-btn">⚙️ Admin</a>
         </nav>
     </aside>
 
     <!-- MAIN -->
-    <main class="main">
+    <main class="main-content">
 
         <!-- TOPBAR -->
         <header class="topbar">
             <input type="text" class="search-box" placeholder="Search...">
+
             <div class="topbar-right">
                 <button id="themeToggle" class="theme-toggle">🌙</button>
                 <div class="profile-name">Hello, Debashish</div>
             </div>
         </header>
 
-        <!-- CONTENT -->
         <section class="content-area">
 
             <h2>Incident Details</h2>
 
+            <!-- ============================== -->
             <!-- TABS -->
+            <!-- ============================== -->
+
             <div class="tabs">
                 <button class="tab-btn active" data-tab="details">Details</button>
                 <button class="tab-btn" data-tab="classification">Classification</button>
                 <button class="tab-btn" data-tab="assignment">Assignment</button>
                 <button class="tab-btn" data-tab="worknotes">Work Notes</button>
                 <button class="tab-btn" data-tab="resolution">Resolution</button>
+                <button class="tab-btn" data-tab="related">Related Records</button>
                 <button class="tab-btn" data-tab="timeline">Timeline</button>
             </div>
+
+            <!-- ============================== -->
+            <!-- TAB CONTENT -->
+            <!-- ============================== -->
 
             <!-- DETAILS TAB -->
             <div id="tab-details" class="tab-pane visible">
 
-                <div class="form-grid">
+                <div class="two-col">
 
-                    <!-- LEFT COLUMN -->
-                    <div>
+                    <div class="col">
                         <label>Short Description</label>
                         <input id="inc_summary" class="input">
 
@@ -75,13 +83,9 @@
 
                         <label>Caller</label>
                         <input id="inc_caller" class="input">
+                    </div>
 
-                        <label>Business Service</label>
-                        <input id="inc_business" class="input">
-
-                        <label>Location</label>
-                        <input id="inc_location" class="input">
-
+                    <div class="col">
                         <label>Priority</label>
                         <select id="inc_priority" class="input">
                             <option>P1</option>
@@ -98,58 +102,53 @@
                             <option>Resolved</option>
                             <option>Closed</option>
                         </select>
-                    </div>
 
-                    <!-- RIGHT COLUMN -->
-                    <div>
-                        <label>Incident ID</label>
-                        <input id="inc_id" class="input" disabled>
-
-                        <label>Opened</label>
-                        <input id="inc_opened" class="input" disabled>
-
-                        <label>Last Updated</label>
-                        <input id="inc_updated" class="input" disabled>
-
-                        <label>SLA Timer</label>
-                        <input id="sla_timer" class="input" disabled style="font-weight:bold;">
+                        <label>Assignment Group</label>
+                        <input id="inc_group" class="input">
                     </div>
 
                 </div>
+
             </div>
 
             <!-- CLASSIFICATION TAB -->
             <div id="tab-classification" class="tab-pane">
-                <div class="form-grid">
-                    <div>
-                        <label>Category</label>
-                        <input id="inc_category" class="input">
-
-                        <label>Subcategory</label>
-                        <input id="inc_subcategory" class="input">
-                    </div>
-
-                    <div>
-                        <label>Configuration Item (CI)</label>
-                        <input id="inc_ci" class="input">
-                    </div>
-                </div>
+                <p>Classification content…</p>
             </div>
 
             <!-- ASSIGNMENT TAB -->
             <div id="tab-assignment" class="tab-pane">
-                <div class="form-grid">
-                    <div>
-                        <label>Assignment Group</label>
-                        <input id="inc_group" class="input">
-                    </div>
-                    <div>
-                        <label>Assigned To</label>
-                        <input id="inc_assigned_to" class="input">
-                    </div>
-                </div>
+                <p>Assignment content…</p>
             </div>
 
             <!-- WORK NOTES TAB -->
             <div id="tab-worknotes" class="tab-pane">
-                <textarea id="work_note_input" class="input" placeholder="Add work note..." style
+                <p>Work notes content…</p>
+            </div>
+
+            <!-- RESOLUTION TAB -->
+            <div id="tab-resolution" class="tab-pane">
+                <p>Resolution content…</p>
+            </div>
+
+            <!-- RELATED TAB -->
+            <div id="tab-related" class="tab-pane">
+                <p>Related records…</p>
+            </div>
+
+            <!-- TIMELINE TAB -->
+            <div id="tab-timeline" class="tab-pane">
+                <div id="sla_timer" class="sla-timer">00:00:00</div>
+            </div>
+
+            <!-- SAVE BUTTON -->
+            <button id="saveIncident" class="btn-primary" style="margin-top:20px;">
+                Save Incident
+            </button>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
